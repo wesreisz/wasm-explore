@@ -1,4 +1,5 @@
-*Install env*
+# Instructions for recreating Web Assembly Files
+## Install Environment
 (https://kripken.github.io/emscripten-site/docs/getting_started/Tutorial.html)
 git clone https://github.com/juj/emsdk.git
 git pull
@@ -8,7 +9,7 @@ source ./emsdk_env.sh
 echo $PATH
 emcc -v
 
-*Hello world*
+## Hello world
 mkdir helloWorld
 cd helloWorld/
 sublime .
@@ -18,7 +19,7 @@ node a.out.js
 emcc hello_world.c -o hello.html
 open hello.html
 
-*Fibonacci*
+## Fibonacci
 mkdir fib
 cd fib
 touch fib.c
