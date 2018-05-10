@@ -9,6 +9,10 @@ source ./emsdk_env.sh
 echo $PATH
 emcc -v
 
+## launch html files
+emrun --list_browsers
+emrun --browser chrome page.html
+
 ## Hello world
 mkdir helloWorld
 cd helloWorld/
@@ -28,7 +32,15 @@ sublime .
 emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' fib.c
 touch fib.html
 open fib.html #fails, must be run in a websvr
-emrun fib.html     
+emrun fib.html  
+
+## ball
+touch ball.cpp 
+<see ball.cpp>
+emcc --emrun -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' -o ball.js ball.cpp
+touch ball.html
+<see ball.html>
+emrun --browser chrome ball.html  
 
 
 
